@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/dude/")
+@RequestMapping("/dude")
 public class TestController {
 	
-	@GetMapping("message")
+	@GetMapping("/message")
 	public String message() {
 		
-		return "Hello this dude spring app";
+		return "Hello this my dude spring boot open shift app";
 	}
 
 }
