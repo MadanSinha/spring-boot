@@ -36,7 +36,7 @@ jobs:
       uses: redhat-actions/push-to-registry@v2
       with:
         image: madanone1/springboot-githubcicd
-        tags: v1
+        tags: latest
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
