@@ -54,7 +54,7 @@ jobs:
       id: build-image
       uses: redhat-actions/buildah-build@v2
       with:
-        image: madanone1/springboot-githubcicd
+        image: springboot-githubcicd
         tags: latest
 
         # If you don't have a Dockerfile/Containerfile, refer to https://github.com/redhat-actions/buildah-build#scratch-build-inputs
@@ -97,10 +97,8 @@ jobs:
       uses: redhat-actions/oc-new-app@v1
       with:
         app_name: sinha-madan1-dev
-        image: docker.io/madanone1/springboot-githubcicd:latest
+        image: ${{ steps.push-image.outputs.registry-path }}
         namespace: sinha-madan1-dev
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }} 
         port: 8080
 
     - name: Print application URL
