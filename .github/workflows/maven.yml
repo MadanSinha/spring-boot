@@ -35,7 +35,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: madanone/testproject-githubcicd
-        tags: latest
+        tags: v1
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -63,7 +63,7 @@ jobs:
       uses: redhat-actions/oc-new-app@v1
       with:
         app_name: sinha-madan1-dev
-        image: docker.io/madanone/testproject-githubcicd:latest
+        image: docker.io/madanone/testproject-githubcicd:v1
         namespace: sinha-madan1-dev
         port: 8080
 
