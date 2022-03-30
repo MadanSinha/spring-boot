@@ -33,7 +33,7 @@ jobs:
       
     - name: Build & push Docker image
       id: push-image
-      uses: mr-smithers-excellent/docker-build-push@v5
+      uses: redhat-actions/push-to-registry@v2
       with:
         image: madanone1/springboot-githubcicd
         tags: v1
