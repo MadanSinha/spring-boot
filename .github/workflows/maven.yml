@@ -32,6 +32,7 @@ jobs:
       
       
     - name: Build & push Docker image
+      id: push-image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: madanone1/springboot-githubcicd
@@ -63,7 +64,7 @@ jobs:
       uses: redhat-actions/oc-new-app@v1
       with:
         app_name: sinha-madan1-dev
-        image: docker.io/madanone1/springboot-githubcicd:v1
+        image: ${{ steps.push-image.outputs.registry-path }}
         namespace: sinha-madan1-dev
         port: 8080
 
