@@ -35,7 +35,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       id: push-image
       with:
-        image: testproject-githubcicd
+        image: madanone1/testproject-githubcicd
         tags: v1
         registry: docker.io
         dockerfile: Dockerfile
