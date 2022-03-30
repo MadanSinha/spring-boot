@@ -34,7 +34,7 @@ jobs:
       id: build-image
       uses: redhat-actions/buildah-build@v2
       with:
-        image: madanone/springboot-githubcicd
+        image: madanone1/springboot-githubcicd
         tags: v2
 
         # If you don't have a Dockerfile/Containerfile, refer to https://github.com/redhat-actions/buildah-build#scratch-build-inputs
@@ -48,7 +48,7 @@ jobs:
       id: push-image
       uses: redhat-actions/push-to-registry@v2
       with:
-        image: madanone1/testproject-githubcicd
+        image: madanone1/springboot-githubcicd
         tags: v2
         registry: docker.io
         dockerfile: Dockerfile
