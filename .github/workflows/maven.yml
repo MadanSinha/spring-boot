@@ -49,7 +49,7 @@ jobs:
       uses: redhat-actions/push-to-registry@v2
       with:
         image: madanone1/testproject-githubcicd
-        tags: v1
+        tags: v2
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
