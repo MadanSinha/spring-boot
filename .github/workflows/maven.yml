@@ -29,10 +29,24 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-      
-    - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v5
+     # https://github.com/redhat-actions/buildah-build#readme
+    - name: Build from Dockerfile
+      id: build-image
+      uses: redhat-actions/buildah-build@v2
+      with:
+        image: madanone/springboot-githubcicd
+        tags: v2
+
+        # If you don't have a Dockerfile/Containerfile, refer to https://github.com/redhat-actions/buildah-build#scratch-build-inputs
+        # Or, perform a source-to-image build using https://github.com/redhat-actions/s2i-build
+        # Otherwise, point this to your Dockerfile/Containerfile relative to the repository root.
+        dockerfiles: |
+          ./Dockerfile
+
+    # https://github.com/redhat-actions/push-to-registry#readme
+    - name: Push to registry
       id: push-image
+      uses: redhat-actions/push-to-registry@v2
       with:
         image: madanone1/testproject-githubcicd
         tags: v1
