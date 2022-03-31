@@ -11,7 +11,7 @@ public class TestController {
 	@GetMapping("/message")
 	public String message() {
 		
-		return "Hello this my dude spring boot open shift app";
+		return "Hello this my brightly spring boot openshift app";
 	}
 
 }
